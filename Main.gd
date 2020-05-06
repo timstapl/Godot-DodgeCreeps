@@ -12,9 +12,12 @@ func game_over():
 	$ScoreTimer.stop()
 	$MobTimer.stop()
 	$HUD.show_game_over()
+	$Music.stop();
+	$DeathSound.play();
 
 # spins the game back up
 func new_game():
+	$Music.play();
 	score = 0
 	$Player.start($StartPosition.position)
 	$StartTimer.start()
